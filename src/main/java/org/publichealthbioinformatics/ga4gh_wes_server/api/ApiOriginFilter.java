@@ -1,4 +1,4 @@
-package io.swagger.api;
+package org.publichealthbioinformatics.ga4gh_wes_server.api;
 
 import java.io.IOException;
 

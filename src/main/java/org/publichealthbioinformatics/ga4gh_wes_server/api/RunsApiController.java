@@ -1,10 +1,9 @@
-package io.swagger.api;
+package org.publichealthbioinformatics.ga4gh_wes_server.api;
 
-import io.swagger.model.ErrorResponse;
-import io.swagger.model.RunId;
-import io.swagger.model.RunListResponse;
-import io.swagger.model.RunLog;
-import io.swagger.model.RunStatus;
+import org.publichealthbioinformatics.ga4gh_wes_server.model.RunId;
+import org.publichealthbioinformatics.ga4gh_wes_server.model.RunListResponse;
+import org.publichealthbioinformatics.ga4gh_wes_server.model.RunLog;
+import org.publichealthbioinformatics.ga4gh_wes_server.model.RunStatus;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
@@ -13,13 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.validation.constraints.*;
 import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -83,7 +77,7 @@ public class RunsApiController implements RunsApi {
         return new ResponseEntity<RunStatus>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<RunListResponse> listRuns(@ApiParam(value = "OPTIONAL The preferred number of workflow runs to return in a page. If not provided, the implementation should use a default page size. The implementation must not return more items than `page_size`, but it may return fewer.  Clients should not assume that if fewer than `page_size` items are returned that all items have been returned.  The availability of additional pages is indicated by the value of `next_page_token` in the response.") @Valid @RequestParam(value = "page_size", required = false) Long pageSize,@ApiParam(value = "OPTIONAL Token to use to indicate where to start getting results. If unspecified, return the first page of results.") @Valid @RequestParam(value = "page_token", required = false) String pageToken) {
+    public ResponseEntity<RunListResponse> listRuns(@ApiParam(value = "OPTIONAL The preferred number of workflow runs to return in a page. If not provided, the implementation should use a default page size. The implementation must not return more items than `page_size`, but it may return fewer.  Clients should not assume that if fewer than `page_size` items are returned that all items have been returned.  The availability of additional pages is indicated by the value of `next_page_token` in the response.") @Valid @RequestParam(value = "page_size", required = false) Long pageSize, @ApiParam(value = "OPTIONAL Token to use to indicate where to start getting results. If unspecified, return the first page of results.") @Valid @RequestParam(value = "page_token", required = false) String pageToken) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {

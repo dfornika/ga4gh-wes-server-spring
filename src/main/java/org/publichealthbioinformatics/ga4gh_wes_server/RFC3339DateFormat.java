@@ -1,4 +1,4 @@
-package io.swagger;
+package org.publichealthbioinformatics.ga4gh_wes_server;
 
 import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
 import com.fasterxml.jackson.databind.util.ISO8601Utils;

@@ -1,4 +1,4 @@
-package io.swagger.configuration;
+package org.publichealthbioinformatics.ga4gh_wes_server.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,16 +1,13 @@
-package io.swagger.model;
+package org.publichealthbioinformatics.ga4gh_wes_server.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
-import javax.validation.constraints.*;
 
 /**
  * To execute a workflow, send a run request including all the details needed to begin downloading and executing a given workflow.

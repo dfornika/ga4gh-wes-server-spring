@@ -1,4 +1,4 @@
-package io.swagger;
+package org.publichealthbioinformatics.ga4gh_wes_server;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.ExitCodeGenerator;
