@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.publichealthbioinformatics</groupId>
     <artifactId>ga4gh-wes-server-spring</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>ga4gh-wes-server-spring</name>
     <version>1.0.0</version>
     <properties>
@@ -17,6 +17,7 @@
         <version>1.5.9.RELEASE</version>
     </parent>
     <build>
+        <finalName>${project.artifactId}</finalName>
         <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
             <plugin>
@@ -40,7 +41,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
         </dependency>
         <!--SpringFox dependencies -->
         <dependency>

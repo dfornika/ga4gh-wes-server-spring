@@ -1,4 +1,4 @@
-FROM tomcat:9.0-jre8
-COPY target/ga4gh-wes*.war /usr/local/tomcat/webapps/ga4gh-wes.war
+FROM openjdk:8-jdk-alpine
+COPY target/ga4gh-wes*.jar /app.jar
 EXPOSE 8080
-ENTRYPOINT ["catalina.sh","run"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
